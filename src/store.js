@@ -6,6 +6,7 @@ import axios from 'axios'
 export const store = reactive({
     movies: null,
     error: null,
+    searchMovies: null,
 
     callApi(name) {
         const config = {
@@ -18,8 +19,8 @@ export const store = reactive({
         };
         axios(config)
             .then(function (response) {
-                console.log(response.data);
                 store.movies = response.data.results
+                console.log(store.movies);
             })
             .catch(function (error) {
                 console.error(error);
