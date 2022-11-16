@@ -1,36 +1,30 @@
 <script>
-import axios from 'axios'
+import AppHeader from './components/AppHeader.vue'
+import AppMain from './components/AppMain.vue'
+import AppFooter from './components/AppFooter.vue'
 import { store } from './store.js'
 export default {
   name: 'App',
+  components: {
+    AppHeader,
+    AppMain,
+    AppFooter
+  },
   data() {
     return {
       store
     }
   },
   mounted() {
-    const config = {
-      method: 'get',
-      url: 'https://api.themoviedb.org/3/search/movie',
-      params: {
-        api_key: 'ef7e66d24e6adde17d381d55ad3ecd29',
-        query: 'Matrix'
-      }
-    };
-
-    axios(config)
-      .then(function (response) {
-        console.log(response.data);
-      })
-      .catch(function (error) {
-        console.error(error);
-      })
+    this.store.callApi('Matrix')
   }
 }
 </script>
 
 <template>
-
+  <AppHeader />
+  <AppMain />
+  <AppFooter />
 </template>
 
 <style lang="scss" scoped>
