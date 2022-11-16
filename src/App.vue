@@ -14,9 +14,6 @@ export default {
     return {
       store
     }
-  },
-  mounted() {
-    this.store.callApi('Matrix')
   }
 }
 </script>

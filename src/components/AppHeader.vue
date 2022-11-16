@@ -11,10 +11,13 @@ export default {
 </script>
 
 <template>
-    <div class="search d-flex gap-2 my-5 justify-content-center">
-        <input type="search" class="form-control w-50">
-        <button type="submit" class="btn btn-dark">Search</button>
+    <div class="container justify-content-center">
+        <div class="search d-flex gap-2 my-5">
+            <input type="search" class="form-control w-50" v-model="store.searchMovies" placeholder="Search a Movie...">
+            <button type="submit" class="btn btn-dark" @click="store.callApi(store.searchMovies)">Search</button>
+        </div>
     </div>
+
 </template>
 
 <style lang="scss">
