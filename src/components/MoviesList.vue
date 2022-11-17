@@ -13,8 +13,8 @@ export default {
 <template>
     <div class="col" v-for="movie in store.movies">
         <p>{{ movie.title }}</p>
-        <p>{{ movie.original_title }}</p>
-        <p>{{ movie.original_language }}</p>
+        <p v-if="movie.title != movie.original_title">{{ movie.original_title }}</p>
+        <img :src="store.flagsCountry(movie.original_language)">
         <p>{{ movie.vote_average }}</p>
     </div>
 </template>

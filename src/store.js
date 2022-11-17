@@ -25,5 +25,16 @@ export const store = reactive({
             .catch(function (error) {
                 console.error(error);
             })
+    },
+    flagsCountry(lang) {
+        if (lang === 'en') {
+            return 'https://flagcdn.com/16x12/gb-eng.png'
+        } else if (lang === 'ja') {
+            return 'https://flagcdn.com/16x12/jp.png'
+        } else {
+            return 'https://flagcdn.com/16x12/' + lang + '.png'
+        }
+
+
     }
 })
