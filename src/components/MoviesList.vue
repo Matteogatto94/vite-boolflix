@@ -17,6 +17,13 @@ export default {
         <img :src="store.flagsCountry(movie.original_language)">
         <p>{{ movie.vote_average }}</p>
     </div>
+
+    <div class="col" v-for="movie in store.tvSeries">
+        <p>{{ movie.name }}</p>
+        <p v-if="movie.name != movie.original_name">{{ movie.original_name }}</p>
+        <img :src="store.flagsCountry(movie.original_language)">
+        <p>{{ movie.vote_average }}</p>
+    </div>
 </template>
 
 <style lang="scss">
