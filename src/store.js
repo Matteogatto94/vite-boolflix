@@ -46,7 +46,7 @@ export const store = reactive({
     },
     flagsCountry(lang) {
         if (lang === 'en') {
-            return 'https://flagcdn.com/16x12/gb-eng.png'
+            return 'https://flagcdn.com/16x12/gb.png'
         } else if (lang === 'ja') {
             return 'https://flagcdn.com/16x12/jp.png'
         } else if (lang === 'da') {
